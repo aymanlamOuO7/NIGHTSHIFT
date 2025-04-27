@@ -7,22 +7,21 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet>
 </head>
 <body>
     <div class="cursor-trail"></div>
     <div class="background-pattern"></div>
+    <div class="particles"></div>
     
     <header>
         <nav>
             <a href="#" class="logo">
-                <img src="assets/images/logo.svg" alt="Nightshift Guild Logo">
+                <img src="https://i.imgur.com/RiP186R.png" alt="Nightshift Guild Logo">
             </a>
             <div class="nav-links">
                 <a href="#">About</a>
-                <a href="#">Members</a>
-                <a href="#">Join</a>
-                <a href="#">Charter</a>
+                <a href="https://discord.gg/nightshift" target="_blank">Join</a>
                 <a href="#">Contact</a>
             </div>
             <div class="mobile-menu-btn">☰</div>
@@ -35,66 +34,55 @@
                 <h1>NIGHTSHIFT <span class="highlight">GUILD</span></h1>
                 <p class="subtitle">We own the night. Shadows whisper our name.</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn-primary">Join the Night</a>
+                    <a href="https://discord.gg/nightshift" class="btn-primary" target="_blank">Join the Night</a>
                     <a href="#" class="btn-secondary">Learn More</a>
                 </div>
             </div>
+            
+            <!-- YouTube Video Embed -->
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/a-AxjJA4XmE?autoplay=1&mute=1&controls=0&loop=1&playlist=a-AxjJA4XmE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
             <div class="scroller">
                 <span>ENTER THE SHADOWS</span>
                 <div class="scroll-line"></div>
             </div>
         </section>
 
-        <section class="content-section">
-            <h2>// ABOUT NIGHTSHIFT</h2>
-            <div class="content-grid">
-                <div class="content-text">
-                    <p>Founded in the darkest hour, Nightshift Guild operates when others sleep. We are collectors of secrets, masters of strategy, and guardians of the moonlit hours.</p>
-                    <p>Our members specialize in covert operations, night-time raids, and shadow economy. Whether you're a rogue, a spellcaster, or a nightstalker, there's a place for you in our ranks.</p>
+        <!-- Interactive Cards Section -->
+        <section class="interactive-section">
+            <h2>// GUILD FEATURES</h2>
+            <div class="card-container">
+                <div class="interactive-card" data-tilt>
+                    <h3>Night Ops</h3>
+                    <p>Covert missions under moonlit skies</p>
+                    <div class="card-hover-content">
+                        <p>Join our stealth operations team</p>
+                        <span class="card-pulse"></span>
+                    </div>
                 </div>
-                <div class="content-image">
-                    <img src="assets/images/banner.jpg" alt="Nightshift Guild Members in Shadow">
+                <div class="interactive-card" data-tilt>
+                    <h3>Shadow Training</h3>
+                    <p>Master the arts of darkness</p>
+                    <div class="card-hover-content">
+                        <p>Learn from veteran nightstalkers</p>
+                        <span class="card-pulse"></span>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="content-section dark">
-            <h2>// OUR PRINCIPLES</h2>
-            <div class="principles-grid">
-                <div class="principle">
-                    <h3>Silence</h3>
-                    <p>Our actions speak louder than words, but our words are rarely heard.</p>
-                </div>
-                <div class="principle">
-                    <h3>Loyalty</h3>
-                    <p>Once blooded in the night, always bound to the night.</p>
-                </div>
-                <div class="principle">
-                    <h3>Precision</h3>
-                    <p>One perfect strike at the perfect moment.</p>
+                <div class="interactive-card" data-tilt>
+                    <h3>Loot Shares</h3>
+                    <p>Divided by night, multiplied by might</p>
+                    <div class="card-hover-content">
+                        <p>Weekly treasure distributions</p>
+                        <span class="card-pulse"></span>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="assets/images/logo.svg" alt="Nightshift Guild Logo">
-            </div>
-            <div class="footer-links">
-                <a href="#">Discord</a>
-                <a href="#">Twitch</a>
-                <a href="#">YouTube</a>
-                <a href="#">Twitter</a>
-            </div>
-            <div class="footer-legal">
-                <p>© 2023 Nightshift Guild. All rights reserved.</p>
-                <p>Operating in the shadows since 2015.</p>
-            </div>
-        </div>
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>
