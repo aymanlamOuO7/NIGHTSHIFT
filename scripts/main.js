@@ -1,87 +1,91 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize particles.js
+    if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#6e3bff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#6e3bff", opacity: 0.2, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" }
+                }
+            }
+        });
+    }
+
+    // Initialize tilt.js on cards
+    if (typeof VanillaTilt !== 'undefined') {
+        VanillaTilt.init(document.querySelectorAll(".interactive-card"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2
+        });
+    }
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function() {
+            const isVisible = navLinks.style.display === 'flex';
+            navLinks.style.display = isVisible ? 'none' : 'flex';
+            mobileMenuBtn.textContent = isVisible ? '☰' : '✕';
+        });
+    }
+
     // Cursor trail effect
     const cursorTrail = document.querySelector('.cursor-trail');
     let mouseX = 0, mouseY = 0;
     let trailX = 0, trailY = 0;
     const speed = 0.2;
-    const trailCount = 5;
-    const trails = [];
     
-    // Create multiple trail elements
-    for (let i = 0; i < trailCount; i++) {
-        const trail = document.createElement('div');
-        trail.className = 'cursor-trail';
-        trail.style.width = `${20 - i * 3}px`;
-        trail.style.height = `${20 - i * 3}px`;
-        trail.style.opacity = 1 - (i * 0.2);
-        document.body.appendChild(trail);
-        trails.push({
-            element: trail,
-            x: 0,
-            y: 0
-        });
-    }
-    
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener('mousemove', function(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
     
-    const animate = () => {
-        // Lead trail (first element)
-        let prevX = mouseX;
-        let prevY = mouseY;
+    function animateCursor() {
+        const dx = mouseX - trailX;
+        const dy = mouseY - trailY;
+        trailX += dx * speed;
+        trailY += dy * speed;
         
-        trails.forEach((trail, index) => {
-            const dx = prevX - trail.x;
-            const dy = prevY - trail.y;
-            trail.x += dx * speed;
-            trail.y += dy * speed;
-            
-            trail.element.style.left = `${trail.x}px`;
-            trail.element.style.top = `${trail.y}px`;
-            
-            prevX = trail.x;
-            prevY = trail.y;
-        });
+        cursorTrail.style.left = `${trailX}px`;
+        cursorTrail.style.top = `${trailY}px`;
         
-        requestAnimationFrame(animate);
-    };
+        requestAnimationFrame(animateCursor);
+    }
     
-    animate();
-    
+    animateCursor();
+
     // Scroll animations
-    const observerOptions = {
-        threshold: 0.1
-    };
-    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-in');
             }
         });
-    }, observerOptions);
-    
-    document.querySelectorAll('.content-section, .principle').forEach(section => {
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.content-section, .interactive-card, .video-container').forEach(section => {
         observer.observe(section);
     });
-    
-    // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        });
-    }
-    
-    // Add glow effect to logo on hover
-    const logo = document.querySelector('.logo img');
+
+    // Logo hover effect
+    const logo = document.getElementById('guild-logo');
     if (logo) {
         logo.addEventListener('mouseenter', () => {
-            logo.style.filter = 'drop-shadow(0 0 10px var(--accent)) brightness(1.2)';
+            logo.style.filter = 'drop-shadow(0 0 15px var(--accent)) brightness(1.2)';
         });
         
         logo.addEventListener('mouseleave', () => {
