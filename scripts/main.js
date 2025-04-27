@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize particles.js
+    // ===== PARTICLES.JS BACKGROUND =====
     if (typeof particlesJS !== 'undefined') {
         particlesJS('particles-js', {
             particles: {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize tilt.js on cards
+    // ===== TILT.JS FOR INTERACTIVE CARDS =====
     if (typeof VanillaTilt !== 'undefined') {
         VanillaTilt.init(document.querySelectorAll(".interactive-card"), {
             max: 15,
@@ -31,19 +31,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Mobile menu toggle
+    // ===== MOBILE MENU TOGGLE =====
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     
     if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', function() {
-            const isVisible = navLinks.style.display === 'flex';
-            navLinks.style.display = isVisible ? 'none' : 'flex';
-            mobileMenuBtn.textContent = isVisible ? '☰' : '✕';
+            const isOpen = navLinks.style.display === 'flex';
+            navLinks.style.display = isOpen ? 'none' : 'flex';
+            mobileMenuBtn.textContent = isOpen ? '☰' : '✕';
         });
     }
 
-    // Cursor trail effect
+    // ===== CURSOR TRAIL EFFECT =====
     const cursorTrail = document.querySelector('.cursor-trail');
     let mouseX = 0, mouseY = 0;
     let trailX = 0, trailY = 0;
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     animateCursor();
 
-    // Scroll animations
+    // ===== SCROLL ANIMATIONS =====
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -77,19 +77,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.content-section, .interactive-card, .video-container').forEach(section => {
+    document.querySelectorAll('.about-section, .interactive-card, .video-container').forEach(section => {
         observer.observe(section);
     });
 
-    // Logo hover effect
-    const logo = document.getElementById('guild-logo');
-    if (logo) {
+    // ===== LOGO HOVER EFFECT =====
+    document.querySelectorAll('.guild-logo').forEach(logo => {
         logo.addEventListener('mouseenter', () => {
+            logo.style.transform = 'scale(1.1)';
             logo.style.filter = 'drop-shadow(0 0 15px var(--accent)) brightness(1.2)';
         });
-        
         logo.addEventListener('mouseleave', () => {
+            logo.style.transform = 'scale(1)';
             logo.style.filter = 'drop-shadow(0 0 5px var(--accent))';
         });
-    }
+    });
 });
