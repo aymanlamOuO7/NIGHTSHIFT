@@ -8,25 +8,127 @@
     --accent-glow: rgba(110, 59, 255, 0.3);
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    /* Rest of your CSS remains the same */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Add this to prevent YouTube tracking */
-.video-container {
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+.background-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 25% 25%, var(--accent-glow) 0%, transparent 50%);
+    z-index: -1;
+}
+
+/* Header */
+header {
+    padding: 1.5rem 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.guild-logo {
+    height: 40px;
+    filter: drop-shadow(0 0 5px var(--accent));
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: var(--accent);
     position: relative;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: var(--accent);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Video Container */
+.video-container {
     width: 80%;
     max-width: 800px;
     margin: 2rem auto;
-    overflow: hidden;
 }
 
 .video-container iframe {
     width: 100%;
-    height: 0;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    position: absolute;
-    top: 0;
-    left: 0;
+    height: 450px;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Content Section */
+.content-section {
+    padding: 5rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .video-container {
+        width: 95%;
+    }
+    .video-container iframe {
+        height: 250px;
+    }
+    .nav-links {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
 }
