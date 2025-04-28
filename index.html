@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nightshift Guild</title>
-    <meta property="og:image" content="https://i.imgur.com/RiP186R.png">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
 </head>
 <body>
     <div class="cursor-trail"></div>
     <div class="background-pattern"></div>
-    <div id="particles-js"></div>
     
     <header>
         <nav>
             <a href="#" class="logo">
-                <img src="https://i.imgur.com/RiP186R.png" alt="Nightshift Guild Logo" class="guild-logo">
+                <svg class="guild-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M100 20L20 100l80 80 80-80z" fill="none" stroke="#6e3bff" stroke-width="8"/>
+                    <circle cx="100" cy="100" r="40" fill="none" stroke="#6e3bff" stroke-width="6"/>
+                    <path d="M70 100h60M100 70v60" stroke="#6e3bff" stroke-width="6"/>
+                </svg>
             </a>
             <div class="nav-links">
                 <a href="#">About</a>
-                <a href="https://discord.gg/nightshift" target="_blank" class="discord-link">Join</a>
+                <a href="https://discord.gg/nightshift" target="_blank">Join</a>
                 <a href="#">Contact</a>
             </div>
             <div class="mobile-menu-btn">☰</div>
@@ -32,7 +32,6 @@
     </header>
 
     <main>
-        <!-- ===== HERO SECTION ===== -->
         <section class="hero">
             <div class="hero-content">
                 <h1>NIGHTSHIFT <span class="highlight">GUILD</span></h1>
@@ -43,7 +42,6 @@
                 </div>
             </div>
             
-            <!-- CENTERED VIDEO -->
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/a-AxjJA4XmE?autoplay=1&mute=1&controls=0&loop=1&playlist=a-AxjJA4XmE" frameborder="0" allowfullscreen></iframe>
             </div>
@@ -54,41 +52,49 @@
             </div>
         </section>
 
-        <!-- ===== ABOUT SECTION ===== -->
-        <section class="about-section">
-            <h2>// ABOUT NIGHTSHIFT</h2>
-            <div class="about-content">
-                <p>Founded in the darkest hour, Nightshift Guild operates when others sleep.</p>
-                <p>Our members specialize at giving everyone else cancer, prime time raids, and shadow economy.</p>
+        <section class="expectations-section">
+            <h2>// THE SHADOW CODE</h2>
+            
+            <div class="expectation-card">
+                <h3>Blood Oath</h3>
+                <p>Sworn to mutual respect. Conflicts resolved through council, not chaos. Betrayal results in permanent exile.</p>
+            </div>
+
+            <div class="expectation-card">
+                <h3>Silent Tongues</h3>
+                <p>Our strategies vanish with the dawn. Sharing guild secrets forfeits your place in the shadows.</p>
+            </div>
+
+            <div class="expectation-card">
+                <h3>Discord Mandate</h3>
+                <p>Our war room never sleeps. PC operatives must maintain active presence or face reassignment.</p>
             </div>
         </section>
 
-        <!-- ===== INTERACTIVE CARDS ===== -->
         <section class="interactive-section">
-            <h2>// GUILD FEATURES</h2>
+            <h2>// GUILD OPERATIONS</h2>
             <div class="card-container">
-                <div class="interactive-card" data-tilt>
-                    <h3>Night Ops</h3>
-                    <p>Covert missions under moonlit skies</p>
+                <div class="interactive-card">
+                    <h3>Moonlight Raids</h3>
+                    <p>Strike when the world sleeps</p>
                     <div class="card-hover-content">
-                        <p>What ever you do </p>
-                        <p>do not join nfsw channel</p>
+                        <p>Precision night operations</p>
                         <span class="card-pulse"></span>
                     </div>
                 </div>
-                <div class="interactive-card" data-tilt>
-                    <h3>Shadow Training</h3>
-                    <p>Master the arts of darkness</p>
+                <div class="interactive-card">
+                    <h3>Shadow Economy</h3>
+                    <p>Profit from the unseen</p>
                     <div class="card-hover-content">
-                        <p>Learn from the best and sven</p>
+                        <p>Exclusive black markets</p>
                         <span class="card-pulse"></span>
                     </div>
                 </div>
-                <div class="interactive-card" data-tilt>
-                    <h3>Loot Shares</h3>
-                    <p>Manged By ticket lady aka Neo</p>
+                <div class="interactive-card">
+                    <h3>Dark Arts Training</h3>
+                    <p>Master forbidden techniques</p>
                     <div class="card-hover-content">
-                        <p>DO NOT TRUST HER</p>
+                        <p>Ancient knowledge shared</p>
                         <span class="card-pulse"></span>
                     </div>
                 </div>
@@ -99,42 +105,24 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="https://i.imgur.com/RiP186R.png" alt="Nightshift Guild Logo" class="guild-logo">
+                <svg class="guild-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M100 20L20 100l80 80 80-80z" fill="none" stroke="#6e3bff" stroke-width="8"/>
+                    <circle cx="100" cy="100" r="40" fill="none" stroke="#6e3bff" stroke-width="6"/>
+                    <path d="M70 100h60M100 70v60" stroke="#6e3bff" stroke-width="6"/>
+                </svg>
             </div>
             <div class="footer-links">
                 <a href="https://discord.gg/nightshift" target="_blank">Discord</a>
                 <a href="#">Twitch</a>
-                <a href="https://www.youtube.com/@Scaryflocka">YouTube</a>
+                <a href="#">YouTube</a>
                 <a href="#">Twitter</a>
             </div>
             <div class="footer-legal">
-                <p>© Trust me on that. All rights reserved.</p>
+                <p>© 2023 Nightshift Guild. All rights reserved.</p>
                 <p>Operating in the shadows since 2015.</p>
             </div>
         </div>
     </footer>
-<!-- Add this after your existing sections in index.html -->
-<section class="expectations-section">
-    <h2>// OUR STANDARDS</h2>
-    
-    <div class="expectation-card">
-        <div class="expectation-icon">⚔️</div>
-        <h3>The Nightshift Code</h3>
-        <p>We value honor among shadows. Our strength lies in mutual respect - conflicts are resolved through diplomacy, not drama. Disrespect toward members or opponents results in immediate exile from our ranks.</p>
-    </div>
-
-    <div class="expectation-card">
-        <div class="expectation-icon">🤫</div>
-        <h3>Vow of Silence</h3>
-        <p>Our strategies, compositions, and techniques are proprietary knowledge. What happens in the shadows stays in the shadows. Violating this trust forfeits your place among us.</p>
-    </div>
-
-    <div class="expectation-card">
-        <div class="expectation-icon">💻</div>
-        <h3>Active Engagement</h3>
-        <p>Our war room operates on Discord. Regular check-ins are mandatory, and we exclusively recruit those who fight on the PC battlegrounds. Inactivity beyond 7 days without notice will result in reassignment.</p>
-    </div>
-</section>
 
     <script src="scripts/main.js"></script>
 </body>
