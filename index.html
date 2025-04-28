@@ -8,10 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <div class="cursor-trail"></div>
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
     <div class="background-pattern"></div>
+    
+    <!-- Custom Cursor Trail -->
+    <div class="cursor-trail"></div>
     
     <header>
         <nav>
@@ -19,9 +24,9 @@
                 <img src="https://i.imgur.com/RiP186R.png" alt="Nightshift Guild Logo" class="guild-logo">
             </a>
             <div class="nav-links">
-                <a href="#">About</a>
-                <a href="https://discord.gg/nightshift" target="_blank" rel="noopener noreferrer">Join</a>
-                <a href="#">Contact</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="https://discord.gg/nightshift" class="nav-link" target="_blank">Join</a>
+                <a href="#" class="nav-link">Contact</a>
             </div>
             <div class="mobile-menu-btn">☰</div>
         </nav>
@@ -33,14 +38,14 @@
                 <h1>NIGHTSHIFT <span class="highlight">GUILD</span></h1>
                 <p class="subtitle">We own the night. Shadows whisper our name.</p>
                 <div class="cta-buttons">
-                    <a href="https://discord.gg/nightshift" class="btn-primary" target="_blank" rel="noopener noreferrer">Join the Night</a>
-                    <a href="#" class="btn-secondary">Learn More</a>
+                    <a href="https://discord.gg/nightshift" class="btn-primary pulse-button" target="_blank">Join the Night</a>
+                    <a href="#" class="btn-secondary glitch-button">Learn More</a>
                 </div>
             </div>
             
-            <!-- Fixed Video Embed -->
+            <!-- Auto-playing Video -->
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/a-AxjJA4XmE?autoplay=0&mute=1&controls=1" 
+                <iframe src="https://www.youtube.com/embed/a-AxjJA4XmE?autoplay=1&mute=1&loop=1&playlist=a-AxjJA4XmE" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen></iframe>
@@ -53,13 +58,39 @@
         </section>
 
         <section class="content-section">
-            <h2>// ABOUT NIGHTSHIFT</h2>
-            <p>Founded in the darkest hour, Nightshift Guild operates when others sleep. We are collectors of secrets, masters of strategy, and guardians of the moonlit hours.</p>
+            <h2>// SHADOW OPERATIVES</h2>
+            <div class="card-container">
+                <div class="interactive-card">
+                    <h3>Stealth Ops</h3>
+                    <p>Invisible strikes under moonlit skies</p>
+                    <div class="card-hover-content">
+                        <p>Join our elite infiltration team</p>
+                        <span class="card-pulse"></span>
+                    </div>
+                </div>
+                <div class="interactive-card">
+                    <h3>Dark Networks</h3>
+                    <p>Profit from unseen markets</p>
+                    <div class="card-hover-content">
+                        <p>Access restricted channels</p>
+                        <span class="card-pulse"></span>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2023 Nightshift Guild. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://i.imgur.com/RiP186R.png" alt="Nightshift Guild Logo">
+            </div>
+            <div class="footer-links">
+                <a href="https://discord.gg/nightshift" target="_blank">Discord</a>
+                <a href="#">Twitch</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
     </footer>
 
     <script src="scripts/main.js"></script>
