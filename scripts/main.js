@@ -43,18 +43,27 @@ document.addEventListener('DOMContentLoaded', function() {
     animateCursor();
 
     // Mobile Menu Toggle
-    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-        const nav = document.querySelector('.nav-links');
-        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-    });
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', function() {
+            const isOpen = navLinks.style.display === 'flex';
+            navLinks.style.display = isOpen ? 'none' : 'flex';
+            menuBtn.textContent = isOpen ? '☰' : '✕';
+        });
+    }
 
     // Logo Hover Effect
-    document.querySelector('.guild-logo').addEventListener('mouseenter', function() {
-        this.style.transform = 'rotate(15deg) scale(1.1)';
-        this.style.filter = 'drop-shadow(0 0 15px var(--accent))';
-    });
-    document.querySelector('.guild-logo').addEventListener('mouseleave', function() {
-        this.style.transform = 'rotate(0) scale(1)';
-        this.style.filter = 'drop-shadow(0 0 5px var(--accent))';
+    const logos = document.querySelectorAll('.guild-logo');
+    logos.forEach(logo => {
+        logo.addEventListener('mouseenter', function() {
+            this.style.transform = 'rotate(15deg) scale(1.1)';
+            this.style.filter = 'drop-shadow(0 0 15px var(--accent))';
+        });
+        logo.addEventListener('mouseleave', function() {
+            this.style.transform = 'rotate(0) scale(1)';
+            this.style.filter = 'drop-shadow(0 0 5px var(--accent))';
+        });
     });
 });
